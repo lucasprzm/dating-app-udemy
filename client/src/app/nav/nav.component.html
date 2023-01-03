@@ -35,11 +35,15 @@
         *ngIf="accountService.currentUser$ | async as user"
         dropdown
       >
+        <img
+          src="{{ user.photoUrl || './assets/user.png' }}"
+          alt="user photo"
+        />
         <button
           id="button-basic"
           dropdownToggle
           type="button"
-          class="btn dropdown-toggle"
+          class="btn dropdown-toggle ms-2"
           aria-controls="dropdown-basic"
         >
           <span class="caret text-light"
