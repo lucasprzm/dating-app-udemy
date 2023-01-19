@@ -46,9 +46,7 @@
           class="btn dropdown-toggle ms-2"
           aria-controls="dropdown-basic"
         >
-          <span class="caret text-light"
-            >Welcome {{ user.username | titlecase }}</span
-          >
+          <span class="caret text-light">Welcome {{ user.knownAs }}</span>
         </button>
         <div class="dropdown-menu mt-3" *dropdownMenu>
           <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
