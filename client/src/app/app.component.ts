@@ -9,8 +9,7 @@ import { AccountService } from './_services/account.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'The Dating App';
-  users: any;
+  title = 'Dating App';
 
   constructor(private accountService: AccountService) {}
 
@@ -19,7 +18,9 @@ export class AppComponent implements OnInit {
   }
 
   setCurrentUser() {
-    const user: User = JSON.parse(localStorage.getItem('user'));
+    const userString = localStorage.getItem('user');
+    if (!userString) return;
+    const user: User = JSON.parse(userString);
     this.accountService.setCurrentUser(user);
   }
 }
