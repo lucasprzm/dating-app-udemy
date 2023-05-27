@@ -49,7 +49,7 @@ app.UseCors(builder => builder
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowCredentials()
-    .WithOrigins("https://localhost:4200", "https://red-sound-2482.fly.dev/"));
+    .WithOrigins("https://localhost:4200", "https://localhost:5001", "https://red-sound-2482.fly.dev/"));
 
 app.UseAuthentication();
 app.UseAuthorization();
