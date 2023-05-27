@@ -33,11 +33,11 @@ else
     var pgHost = pgHostPort.Split(":")[0];
     var pgPort = pgHostPort.Split(":")[1];
 
-    connString = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};";
+    connString = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;Trust Server Certificate=true";
 }
 builder.Services.AddDbContext<DataContext>(opt =>
 {
-    opt.UseNpgsql(connString);
+  opt.UseNpgsql(connString);
 });
 
 var app = builder.Build();
